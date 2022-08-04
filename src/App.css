@@ -1,0 +1,70 @@
+@import '~antd/dist/antd.css';
+
+/* Utility class */
+
+.justify-item-center {
+  justify-content: center;
+}
+.align-item-center {
+  align-items: center;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.list-style-none {
+  list-style: none;
+}
+.w-100 {
+  width: 100%;
+}
+.h-100 {
+  height: 100%;
+}
+.pointer-coursor {
+  cursor: pointer;
+}
+.text-center {
+  text-align: center;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+/* Customize class */
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+.ant-space-item {
+  width: 100%;
+}
+
+.App {
+  /* background-color: #282c34; */
+  min-height: 100vh;
+  /* text-align: center; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  /* color: white; */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
