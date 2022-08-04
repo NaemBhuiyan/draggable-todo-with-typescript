@@ -14,8 +14,6 @@ const TodoList = ({ todos, dispatch }: Props) => {
   const onDragEnd = (result: DropResult) => {
     const { destination, source } = result;
 
-    console.log(result);
-
     if (!destination) {
       return;
     }
@@ -54,7 +52,6 @@ const TodoList = ({ todos, dispatch }: Props) => {
       });
     }
   };
-  console.log(todos);
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
