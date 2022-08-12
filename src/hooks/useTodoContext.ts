@@ -6,7 +6,7 @@ const useTodoContext = () => {
 
   if (!context) {
     throw new Error(
-      "Todo context provider not found, make sure you're using auth components correctly."
+      "Todo context provider not found, make sure you're using  components correctly."
     );
   }
 

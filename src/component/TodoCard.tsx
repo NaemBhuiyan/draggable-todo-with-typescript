@@ -79,12 +79,14 @@ const TodoCard = ({ todo, dispatch, index }: Props) => {
               </Col>
             </Row>
           ) : (
-            <Row justify='space-between'>
+            <Row
+              justify='space-between'
+              data-testid={todo.isDone ? 'Not completed' : 'Complete the task'}>
               <Col>{todo.isDone ? <s>{todo.todo}</s> : todo.todo}</Col>
               <Col>
                 <Space direction='horizontal'>
                   <Tooltip
-                    title={todo.isDone ? 'Not completed' : 'Complete task'}>
+                    title={todo.isDone ? 'Not completed' : 'Complete the task'}>
                     {!todo.isDone ? (
                       <CheckOutlined onClick={() => handleComplete()} />
                     ) : (
@@ -92,9 +94,7 @@ const TodoCard = ({ todo, dispatch, index }: Props) => {
                     )}
                   </Tooltip>
                   <DeleteOutlined onClick={() => handleDelete(todo.id)} />
-                  {!todo.isDone && (
-                    <EditOutlined onClick={() => handleEdit(todo.todo)} />
-                  )}
+                  <EditOutlined onClick={() => handleEdit(todo.todo)} />
                 </Space>
               </Col>
             </Row>

@@ -11,6 +11,9 @@ type Props = {
 };
 
 const TodoList = ({ todos, dispatch }: Props) => {
+  const tasks = todos.filter((todo) => todo.isDone === false);
+  const completeTask = todos.filter((todo) => todo.isDone === true);
+
   const onDragEnd = (result: DropResult) => {
     const { destination, source } = result;
 
@@ -57,21 +60,18 @@ const TodoList = ({ todos, dispatch }: Props) => {
     <DragDropContext onDragEnd={onDragEnd}>
       <Row justify='space-around'>
         <Col span={10}>
+          <Typography.Title className='text-center'>
+            Active task
+          </Typography.Title>
           <Droppable droppableId='TodoList'>
             {(provided, snapshot) => (
               <div
-                className={`todos ${
-                  snapshot.isDraggingOver ? 'dragactive' : ''
-                }`}
+                className={`${tasks.length ? '' : 'text-center'}`}
                 ref={provided.innerRef}
                 {...provided.droppableProps}>
-                <Typography.Title className='text-center'>
-                  Todo
-                </Typography.Title>
-
-                <Space size='large' className='w-100' direction='vertical'>
-                  {todos.map((todo, index) => {
-                    if (!todo.isDone) {
+                {tasks.length ? (
+                  <Space size='large' className='w-100' direction='vertical'>
+                    {tasks.map((todo, index) => {
                       return (
                         <TodoCard
                           key={todo.id}
@@ -80,10 +80,13 @@ const TodoList = ({ todos, dispatch }: Props) => {
                           index={index}
                         />
                       );
-                    }
-                    return false;
-                  })}
-                </Space>
+                    })}
+                  </Space>
+                ) : (
+                  <Typography.Text type='secondary'>
+                    <small>There is no task</small>
+                  </Typography.Text>
+                )}
                 {provided.placeholder}
               </div>
             )}
@@ -93,21 +96,16 @@ const TodoList = ({ todos, dispatch }: Props) => {
           <Divider type='vertical' className='h-100'></Divider>
         </Col>
         <Col span={10}>
+          <Typography.Title className='text-center'>Complete</Typography.Title>
           <Droppable droppableId='CompleteTodoList'>
             {(provided, snapshot) => (
               <div
-                className={`todos ${
-                  snapshot.isDraggingOver ? 'dragactive' : ''
-                }`}
+                className={`${completeTask.length ? '' : 'text-center'}`}
                 ref={provided.innerRef}
                 {...provided.droppableProps}>
-                <Typography.Title className='text-center'>
-                  Complete
-                </Typography.Title>
-
-                <Space size='large' className='w-100' direction='vertical'>
-                  {todos.map((todo, index) => {
-                    if (todo.isDone) {
+                {completeTask.length ? (
+                  <Space size='large' className='w-100' direction='vertical'>
+                    {completeTask.map((todo, index) => {
                       return (
                         <TodoCard
                           key={todo.id}
@@ -116,10 +114,13 @@ const TodoList = ({ todos, dispatch }: Props) => {
                           index={index}
                         />
                       );
-                    }
-                    return false;
-                  })}
-                </Space>
+                    })}
+                  </Space>
+                ) : (
+                  <Typography.Text type='secondary'>
+                    <small>There is no completed task</small>
+                  </Typography.Text>
+                )}
                 {provided.placeholder}
               </div>
             )}
