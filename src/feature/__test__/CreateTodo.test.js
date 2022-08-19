@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import CreateTodo from './CreateTodo';
+import CreateTodo from '../CreateTodo';
 import userEvent from '@testing-library/user-event';
 
 

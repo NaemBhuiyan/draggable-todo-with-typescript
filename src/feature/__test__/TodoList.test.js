@@ -1,8 +1,8 @@
 import React, { useReducer } from 'react';
 import { render, screen } from '@testing-library/react';
-import TodoList from './TodoList';
+import TodoList from '../TodoList';
 import userEvent from '@testing-library/user-event';
-import todoReducer, { initialState } from '../reducer/todoReducer';
+import todoReducer, { initialState } from '../../reducer/todoReducer';
 
 const renderHook = (hook) => {
   let results;
