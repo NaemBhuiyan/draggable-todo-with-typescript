@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/draggable-todo-with-typescript/static/css/main.04d1facf.css",
+    "main.js": "/draggable-todo-with-typescript/static/js/main.c3db1be7.js",
+    "static/js/787.28cb0dcd.chunk.js": "/draggable-todo-with-typescript/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/draggable-todo-with-typescript/index.html",
+    "main.04d1facf.css.map": "/draggable-todo-with-typescript/static/css/main.04d1facf.css.map",
+    "main.c3db1be7.js.map": "/draggable-todo-with-typescript/static/js/main.c3db1be7.js.map",
+    "787.28cb0dcd.chunk.js.map": "/draggable-todo-with-typescript/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.04d1facf.css",
+    "static/js/main.c3db1be7.js"
+  ]
+}
