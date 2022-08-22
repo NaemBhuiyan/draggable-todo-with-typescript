@@ -1,4 +1,3 @@
-import { type } from 'os';
 import { useReducer } from 'react';
 import TodoContext from '../context/TodoContext';
 import todoReducer, { initialState } from '../reducer/todoReducer';
