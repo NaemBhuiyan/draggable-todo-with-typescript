@@ -84,7 +84,7 @@ const TodoList = ({ todos, dispatch }: Props) => {
                   </Space>
                 ) : (
                   <Typography.Text type='secondary'>
-                    <small>There is no task</small>
+                    <small>There is no tasks</small>
                   </Typography.Text>
                 )}
                 {provided.placeholder}

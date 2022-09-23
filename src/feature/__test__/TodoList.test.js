@@ -1,10 +1,9 @@
 import React, { useReducer } from 'react';
 import { render, screen } from '@testing-library/react';
 import TodoList from '../TodoList';
-import userEvent from '@testing-library/user-event';
 import todoReducer, { initialState } from '../../reducer/todoReducer';
 
-const renderHook = (hook) => {
+const renderReducerHook = (hook) => {
   let results;
   function HookWrapper() {
     results = useReducer(todoReducer, initialState);
@@ -32,16 +31,14 @@ beforeEach(() => {
 });
 
 test('create todo input field test', async () => {
-  
-
-  const [todos, dispatch] = renderHook();
+  const [todos, dispatch] = renderReducerHook();
 
   // render(<TodoList todos={todos} dispatch={dispatch} />);
 
   // const el = screen.getByText(/There is no task/i);
 
   // expect(el).toBeInTheDocument();
-  
+
   render(
     <TodoList
       todos={[
@@ -64,20 +61,10 @@ test('create todo input field test', async () => {
   expect(todosCard.length).toEqual(2);
 });
 
-
 test('if there is no todos', async () => {
-  
-  
+  const [todos, dispatch] = renderReducerHook();
 
-  const [todos, dispatch] = renderHook();
-
-  
-  render(
-    <TodoList
-      todos={todos}
-      dispatch={dispatch}
-    />
-  );
+  render(<TodoList todos={todos} dispatch={dispatch} />);
 
   const todosCard = screen.getByText(/there is no task/i);
   expect(todosCard).toBeInTheDocument();
